@@ -33,20 +33,26 @@
   <body>
     <!-- LOGIN PAGE -->
     <div id="login">
-      <div class="container p-4">
+      <div class="container py-3 px-0">
         <div class="row">
           <div class="col-sm-12 d-flex justify-content-between">
-            <h3 class="primary-font fw-bold dark-gray">Thebullysearch</h3>
+            <h3 class="primary-font fw-bold dark-gray nav-logo">
+              Thebullysearch
+            </h3>
             <a href="#">
-              <img src="media/icons/times-square.svg" alt="exit" />
+              <img
+                src="media/icons/times-square.svg"
+                class="nav-icon"
+                alt="exit"
+              />
             </a>
           </div>
         </div>
         <div class="row mt-5">
-          <h1 class="display-3 primary-font login-h dark-gray">
+          <h1 class="primary-font login-h dark-gray">
             Welcome back to pretty login
           </h1>
-          <p class="muted primary-font fs-4 mt-3">
+          <p class="muted primary-font login-p mt-2">
             It's great to have you back!
           </p>
         </div>
@@ -73,32 +79,37 @@
               </span>
               <input
                 type="password"
-                class="form-control border-start-0 border-end-0 primary-font fs-6 form-input px-0 border-gray"
+                class="form-control border-start-0 border-end-0 primary-font form-input px-0 border-gray"
                 placeholder="Enter password"
+                name="password"
+                id="password"
                 aria-label="Amount (to the nearest dollar)"
               />
               <span
                 class="input-group-text px-2 border-rr border-start-0 border-gray py-2"
               >
-                <a href="#">
+                <a href="#" onclick="Switch()">
                   <img src="media/icons/eye.svg" class="opacity-25" alt="user"
                 /></a>
               </span>
             </div>
             <div class="row my-2">
-              <a href="#" class="text-decoration-none muted primary-font">
-                Forgot Password?
-              </a>
+              <div class="col-12">
+                <a
+                  href="#"
+                  class="text-decoration-none muted primary-font forgot-pw"
+                >
+                  Forgot Password?
+                </a>
+              </div>
             </div>
             <div class="row my-3">
-              <div class="col-sm-6">
+              <div class="col-12 d-flex justify-content-between">
                 <input
                   type="submit"
                   value="LOGIN"
                   class="form-control primary-font text-white form-btn"
                 />
-              </div>
-              <div class="col-sm-6 my-sm-0 my-2">
                 <a href="#" class="form-control primary-font form-btn bg-white"
                   >CREATE ACCOUNT</a
                 >
@@ -120,6 +131,14 @@
     <script>
       if ("ServiceWorker" in navigator) {
         navigator.serviceWorker.register("/service-worker.js");
+      }
+      function Switch() {
+        var x = document.getElementById("password");
+        if (x.type === "password") {
+          x.type = "text";
+        } else {
+          x.type = "password";
+        }
       }
     </script>
   </body>

@@ -14,10 +14,29 @@ $white: #fff;
 .muted {
   color: $muted;
 }
+
 #login {
+  .container {
+    width: 398px !important;
+  }
+  .nav-logo {
+    font-size: 22px;
+  }
+  .nav-icon {
+    width: 19px;
+  }
   .login-h {
-    letter-spacing: 0.05em;
+    font-family: "Roboto";
+    font-style: normal;
     font-weight: 500;
+    font-size: 34px;
+    line-height: 40px;
+    letter-spacing: 0.05em;
+    text-transform: capitalize;
+  }
+  .login-p {
+    font-size: 18px;
+    line-height: 21px;
   }
   form {
     .input-group-text {
@@ -25,6 +44,9 @@ $white: #fff;
     }
     input::placeholder {
       color: $light-gray;
+    }
+    input {
+      font-size: 14px !important;
     }
     input::hover {
       box-shadow: none !important;
@@ -42,6 +64,9 @@ $white: #fff;
     .form-control:focus {
       box-shadow: none;
     }
+    .forgot-pw {
+      font-size: 12px;
+    }
     .form-btn {
       font-weight: 500 !important;
       border-radius: 10px;
@@ -50,10 +75,48 @@ $white: #fff;
       border: 1px solid $primary-color;
       color: $primary-color;
       transition: all 0.3s;
+      //   box-sizing: border-box;
+      width: 48.5%;
+      //   font-size: 14px;
+      font-size: 14px;
+      padding: 11px 0px;
+      line-height: 16px;
       background-color: $primary-color;
-      &:hover {
-        background-color: $white;
-        color: $primary-color !important;
+      //   padding: 13px 0px;
+      //   justify-content: center;
+      //   display: flex;
+      //   align-items: center;
+      //   height: 40px;
+      //   &:hover {
+      //     background-color: $white;
+      //     color: $primary-color !important;
+      //   }
+    }
+  }
+}
+
+@media screen and (max-width: 428px) {
+  #login {
+    .container {
+      width: 100% !important;
+      padding: 15px !important;
+    }
+  }
+}
+@media screen and (max-width: 376px) {
+  #login {
+    .container {
+      .form-btn {
+        width: 48% !important;
+      }
+    }
+  }
+}
+@media screen and (max-width: 360px) {
+  #login {
+    .container {
+      .form-btn {
+        width: 48% !important;
       }
     }
   }
